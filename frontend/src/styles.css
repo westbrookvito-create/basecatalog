@@ -144,7 +144,7 @@ button {
 
 .banner__image {
   width: 100%;
-  aspect-ratio: 16 / 6;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   display: block;
   background: #f4f4f4;
@@ -345,7 +345,7 @@ button {
 
 .product__image {
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
   background: #f4f4f4;
 }
@@ -576,7 +576,7 @@ button {
 }
 
 .back-link {
-  padding: 16px 20px 0;
+  padding: 16px 20px 14px;
   font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;

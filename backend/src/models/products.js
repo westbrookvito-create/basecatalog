@@ -27,6 +27,16 @@ export function getProductById(id) {
   return parseProduct(row);
 }
 
+// Categories aren't a separate table — they're just the distinct values
+// already in use on products. Typing a new one while adding a product is
+// how a category gets "added".
+export function listCategories() {
+  const rows = db
+    .prepare("SELECT DISTINCT category FROM products WHERE category != '' ORDER BY category")
+    .all();
+  return rows.map((r) => r.category);
+}
+
 export function createProduct({ title, description = '', price, images = [], sizes = [], category = '' }) {
   const result = db
     .prepare(
