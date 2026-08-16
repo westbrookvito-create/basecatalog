@@ -51,10 +51,22 @@ button {
 }
 
 .header__name {
-  font-size: 14px;
+  font-size: 22px;
   font-weight: 800;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
   text-transform: uppercase;
+}
+
+/* ---- Banner ---- */
+
+.banner {
+  background: var(--ink);
+  color: var(--paper);
+  text-align: center;
+  padding: 11px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
 }
 
 .page {
@@ -82,8 +94,8 @@ button {
 
 .welcome__mark {
   font-size: 30px;
-  font-weight: 600;
-  letter-spacing: 0.28em;
+  font-weight: 800;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
 }
 
@@ -106,7 +118,7 @@ button {
   border-radius: 0;
   padding: 15px 28px;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   transition: opacity 0.15s ease;
@@ -173,6 +185,7 @@ button {
   margin-top: 10px;
   padding: 0 8px;
   font-size: 13px;
+  font-weight: 700;
   line-height: 1.3;
 }
 
@@ -185,6 +198,7 @@ button {
 .product-card__price {
   padding: 2px 8px 12px;
   font-size: 13px;
+  font-weight: 600;
   color: var(--muted);
 }
 
@@ -210,11 +224,12 @@ button {
 
 .product__title {
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .product__price {
   font-size: 16px;
+  font-weight: 700;
   color: var(--muted);
 }
 
@@ -226,7 +241,7 @@ button {
 
 .section-label {
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--muted);
@@ -363,7 +378,7 @@ button {
 
 .confirmation__title {
   font-size: 19px;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .confirmation__subtitle {
@@ -394,7 +409,7 @@ button {
 
 .requisites__number {
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.02em;
   text-align: center;
   padding: 8px 0;
@@ -455,7 +470,7 @@ button {
   text-align: center;
   padding: 14px 4px 12px;
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--muted);
@@ -510,7 +525,7 @@ button {
 
 .profile__name {
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .profile__username {
@@ -547,6 +562,7 @@ button {
 
 .order-list__title {
   font-size: 14px;
+  font-weight: 600;
 }
 
 .order-list__price {
