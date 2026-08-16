@@ -195,13 +195,14 @@ button {
   background: var(--ink);
   color: var(--paper);
   border: 1px solid var(--ink);
-  border-radius: 0;
-  padding: 15px 28px;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
+  border-radius: 999px;
+  padding: 17px 28px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  transition: opacity 0.15s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+  box-shadow: 0 10px 22px rgba(17, 17, 17, 0.28);
   width: 100%;
 }
 
@@ -209,16 +210,20 @@ button {
   background: var(--line);
   border-color: var(--line);
   color: var(--muted);
+  box-shadow: none;
   cursor: not-allowed;
 }
 
 .btn:active:not(:disabled) {
-  opacity: 0.7;
+  opacity: 0.85;
+  transform: scale(0.98);
+  box-shadow: 0 4px 12px rgba(17, 17, 17, 0.24);
 }
 
 .btn--outline {
   background: transparent;
   color: var(--ink);
+  box-shadow: none;
 }
 
 /* ---- Filters: category pills + search ---- */
