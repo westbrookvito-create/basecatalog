@@ -19,16 +19,16 @@ export default function Welcome() {
     <div className="page page--with-nav">
       <Header />
       <Banner image={bannerImage} />
-      <div className="welcome">
-        <div className="welcome__mark">wanchenko</div>
-        <p className="welcome__about">
-          Отобранные вещи из ресейла: верхняя одежда, обувь и аксессуары в ограниченном
-          количестве. Каждая позиция — в единственном экземпляре.
-        </p>
-        <button className="btn" onClick={() => navigate('/catalog')}>
-          Перейти в каталог
-        </button>
-      </div>
+
+      <button className="link-cta" onClick={() => navigate('/catalog')}>
+        Перейти в каталог <span aria-hidden="true">→</span>
+      </button>
+
+      <p className="welcome-about">
+        Отобранные вещи из ресейла: верхняя одежда, обувь и аксессуары в ограниченном
+        количестве. Каждая позиция — в единственном экземпляре.
+      </p>
+
       <BottomNav />
     </div>
   );

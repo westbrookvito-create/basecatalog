@@ -19,10 +19,10 @@ export default function ProductCard({ product }) {
         <div className="product-card__image product-card__no-photo">No photo</div>
       )}
       <div className="product-card__title">{product.title}</div>
-      {product.sizes?.length > 0 && (
-        <div className="product-card__size">Размер: {product.sizes.join(', ')}</div>
-      )}
       <div className="product-card__price">{product.price.toLocaleString('ru-RU')} ₽</div>
+      {product.sizes?.length > 0 && (
+        <div className="product-card__size">{product.sizes.join(', ')}</div>
+      )}
     </Link>
   );
 }
