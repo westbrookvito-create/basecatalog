@@ -7,18 +7,18 @@ import { fetchConfig } from '../api.js';
 
 export default function Welcome() {
   const navigate = useNavigate();
-  const [banner, setBanner] = useState(null);
+  const [bannerImage, setBannerImage] = useState(null);
 
   useEffect(() => {
     fetchConfig()
-      .then((c) => setBanner(c.banner?.active ? c.banner.text : null))
+      .then((c) => setBannerImage(c.banner?.active ? c.banner.image : null))
       .catch(() => {});
   }, []);
 
   return (
     <div className="page page--with-nav">
       <Header />
-      <Banner text={banner} />
+      <Banner image={bannerImage} />
       <div className="welcome">
         <div className="welcome__mark">wanchenko</div>
         <p className="welcome__about">
