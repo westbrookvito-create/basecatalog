@@ -39,3 +39,7 @@ export function createOrder(payload) {
 export function fetchOrder(id) {
   return request(`/api/orders/${id}?initData=${encodeURIComponent(getInitData())}`);
 }
+
+export function fetchMyOrders() {
+  return request(`/api/orders/mine?initData=${encodeURIComponent(getInitData())}`);
+}

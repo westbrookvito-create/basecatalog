@@ -3,20 +3,7 @@ import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import Header from '../components/Header.jsx';
 import { fetchOrder } from '../api.js';
 import { hapticNotification } from '../telegram.js';
-
-const STATUS_LABELS = {
-  pending: 'Ожидает оплаты',
-  paid: 'Оплачен',
-  shipped: 'Отправлен',
-  received: 'Получен',
-  cancelled: 'Отменён',
-};
-
-const DELIVERY_LABELS = {
-  cdek: 'СДЭК',
-  russian_post: 'Почта России',
-  yandex: 'Яндекс Доставка',
-};
+import { STATUS_LABELS, DELIVERY_LABELS } from '../constants.js';
 
 export default function OrderConfirmation() {
   const { id } = useParams();

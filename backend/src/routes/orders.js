@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { getProductById } from '../models/products.js';
-import { createOrder, getOrderById } from '../models/orders.js';
+import { createOrder, getOrderById, listOrders } from '../models/orders.js';
 import { isValidDeliveryMethod } from '../config/delivery.js';
 import { pickRandomRequisites } from '../config/payments.js';
 import { verifyInitData } from '../utils/telegramAuth.js';
@@ -92,6 +92,18 @@ ordersRouter.post('/', async (req, res) => {
   await notifyAdminsNewOrder(order);
 
   res.status(201).json(order);
+});
+
+ordersRouter.get('/mine', (req, res) => {
+  let tgUser = verifyInitData(req.query.initData, process.env.BOT_TOKEN);
+  if (!tgUser && process.env.ALLOW_DEBUG_AUTH === 'true' && req.query.debugUserId) {
+    tgUser = { id: Number(req.query.debugUserId) };
+  }
+  if (!tgUser?.id) {
+    return res.status(401).json({ error: 'invalid_telegram_auth' });
+  }
+
+  res.json(listOrders({ telegramUserId: tgUser.id }));
 });
 
 ordersRouter.get('/:id', (req, res) => {

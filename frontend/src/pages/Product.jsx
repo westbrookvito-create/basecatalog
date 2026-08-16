@@ -10,6 +10,7 @@ export default function Product() {
   const [product, setProduct] = useState(null);
   const [error, setError] = useState(false);
   const [size, setSize] = useState(null);
+  const [imgFailed, setImgFailed] = useState(false);
 
   useEffect(() => {
     fetchProduct(id)
@@ -37,6 +38,7 @@ export default function Product() {
 
   const needsSize = product.sizes.length > 0;
   const canOrder = !needsSize || !!size;
+  const hasPhoto = product.images?.length > 0 && !imgFailed;
 
   return (
     <div className="page">
@@ -45,7 +47,16 @@ export default function Product() {
         ← Каталог
       </button>
       <div className="product">
-        <img className="product__image" src={product.images[0]} alt={product.title} />
+        {hasPhoto ? (
+          <img
+            className="product__image"
+            src={product.images[0]}
+            alt={product.title}
+            onError={() => setImgFailed(true)}
+          />
+        ) : (
+          <div className="product__image product-card__no-photo">No photo</div>
+        )}
         <div className="product__body">
           <div>
             <div className="product__title">{product.title}</div>

@@ -1,11 +1,12 @@
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header.jsx';
+import BottomNav from '../components/BottomNav.jsx';
 
 export default function Welcome() {
   const navigate = useNavigate();
 
   return (
-    <div className="page">
+    <div className="page page--with-nav">
       <Header />
       <div className="welcome">
         <div className="welcome__mark">wanchenko</div>
@@ -17,6 +18,7 @@ export default function Welcome() {
           Перейти в каталог
         </button>
       </div>
+      <BottomNav />
     </div>
   );
 }

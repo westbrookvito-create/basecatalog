@@ -62,7 +62,7 @@ export function getOrderById(id) {
 
 // Universal listing method with optional filters — avoids one bespoke query
 // per filter combination.
-export function listOrders({ status, deliveryMethod } = {}) {
+export function listOrders({ status, deliveryMethod, telegramUserId } = {}) {
   let query = 'SELECT * FROM orders WHERE 1 = 1';
   const params = [];
   if (status) {
@@ -72,6 +72,10 @@ export function listOrders({ status, deliveryMethod } = {}) {
   if (deliveryMethod) {
     query += ' AND delivery_method = ?';
     params.push(deliveryMethod);
+  }
+  if (telegramUserId) {
+    query += ' AND telegram_user_id = ?';
+    params.push(telegramUserId);
   }
   query += ' ORDER BY created_at DESC';
   const rows = db.prepare(query).all(...params);

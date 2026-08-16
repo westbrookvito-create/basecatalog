@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Header from '../components/Header.jsx';
+import BottomNav from '../components/BottomNav.jsx';
 import ProductCard from '../components/ProductCard.jsx';
 import { fetchProducts } from '../api.js';
 
@@ -14,7 +15,7 @@ export default function Catalog() {
   }, []);
 
   return (
-    <div className="page">
+    <div className="page page--with-nav">
       <Header />
       {error && <div className="state state--error">Не удалось загрузить каталог</div>}
       {!error && !products && <div className="state">Загрузка…</div>}
@@ -28,6 +29,7 @@ export default function Catalog() {
           </div>
         </div>
       )}
+      <BottomNav />
     </div>
   );
 }
