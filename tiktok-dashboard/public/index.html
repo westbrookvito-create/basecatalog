@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TikTok — дашборд рассылки</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>TikTok — дашборд рассылки</h1>
+  <p class="sub">Ссылки на ваши TikTok-аккаунты уходят целевому боту по расписанию, ответы сохраняются здесь.</p>
+
+  <div class="toolbar">
+    <button id="run-now">Отправить сейчас</button>
+    <button id="refresh" class="secondary">Обновить</button>
+  </div>
+
+  <form id="add-form">
+    <input type="url" id="new-url" placeholder="https://www.tiktok.com/@username" required />
+    <input type="text" id="new-label" placeholder="Метка (необязательно)" />
+    <button type="submit">Добавить аккаунт</button>
+  </form>
+
+  <div id="cards" class="cards"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
